@@ -44,7 +44,7 @@ For more detail please visit https://github.com/rhysd/fixjson.`;
                 default: undefined,
             }).argv as Config & yargs.Arguments;
 
-        const numFormatted = await new FixJSON(argv).main(argv._);
+        const numFormatted = await new FixJSON(argv).main(argv._ as string[]);
         if (argv._.length > 0 && argv.write) {
             console.log('formatted', numFormatted, 'file(s)');
         }
